@@ -38,13 +38,14 @@ Usage
 -----
 
 Using it is simple, just change your configuration in thumbor.conf:
-  CASSANDRA_LOADER_SERVER_HOST = 'localhost'
-  CASSANDRA_LOADER_SERVER_PORT' = 9042
-  CASSANDRA_LOADER_KEYSPACE' = 'general'
-  CASSANDRA_LOADER_TABLE_NAME' = 'images'
-  CASSANDRA_LOADER_TABLE_ID_COLUMN' = 'image_id'
-  CASSANDRA_LOADER_TABLE_BLOB_COLUMN' = "image_data"
-  CASSANDRA_LOADER_QUERY' = 'SELECT * FROM {0} WHERE {1}=%s'
+    
+     CASSANDRA_LOADER_SERVER_HOST = 'localhost'
+     CASSANDRA_LOADER_SERVER_PORT' = 9042
+     CASSANDRA_LOADER_KEYSPACE' = 'general'
+     CASSANDRA_LOADER_TABLE_NAME' = 'images'
+     CASSANDRA_LOADER_TABLE_ID_COLUMN' = 'image_id'
+     CASSANDRA_LOADER_TABLE_BLOB_COLUMN' = "image_data"
+     CASSANDRA_LOADER_QUERY' = 'SELECT * FROM {0} WHERE {1}=%s'
 
 To use thumbor_cassandra for loading original images, change your thumbor.conf to read:
 
@@ -55,16 +56,16 @@ Testing
 
 In order to execute [pyvows](http://heynemann.github.com/pyvows/) tests, you have to install pyvows :
 
-  pip install pyvows 
+       pip install pyvows 
 
 and run tests with :
 
-  pyvows vows
+       pyvows vows
   
 
 License
 -------
 
-  Licensed under the MIT license:
-  http://www.opensource.org/licenses/mit-license
-  Copyright (c) 2019 tmg.nl
+        Licensed under the MIT license:
+        http://www.opensource.org/licenses/mit-license
+        Copyright (c) 2019 tmg.nl
