@@ -1,0 +1,17 @@
+language: 
+ - python
+ - java
+python:
+  - "2.7"
+jdk:
+  - openjdk7
+services:
+  - docker
+before_install:
+  - docker pull cassandra
+  - docker run -d -p 9042:9042 -p 7199:7199 -p 9160:9160 cassandra:latest
+install:
+ - sudo pip install pyvows thumbor thumbor_cassandra
+script:
+ - sleep 5
+ - pyvows -c -l thumbor_cassandra
