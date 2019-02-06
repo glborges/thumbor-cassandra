@@ -11,7 +11,15 @@ before_install:
   - docker pull cassandra
   - docker run -d -p 9042:9042 -p 7199:7199 -p 9160:9160 cassandra:latest
 install:
- - sudo pip install pyvows thumbor thumbor_cassandra
+ - sudo apt-get -y install python-opencv libcurl4-openssl-dev python-dev libjpeg8-dev python-pip python-crypto python-gevent libevent-dev python-coverage
+ - export CPPFLAGS=-I/usr/local/opt/openssl/include
+ - export LDFLAGS=-L/usr/local/opt/openssl/lib
+ - export PYCURL_SSL_LIBRARY=openssl
+ - sudo pip install --upgrade pip setuptools wheel
+ - sudo pip install tornado_pyvows==0.6.0
+ - sudo pip install pyvows==2.0.6
+ - sudo pip install thumbor==5.0.3
+ - sudo pip install thumbor-cassandra
 script:
  - sleep 5
  - pyvows -c -l thumbor_cassandra
