@@ -17,7 +17,7 @@ def readme():
 
 
 __version__ = None
-execfile('thumbor_cassandra/_version.py')
+exec(open('thumbor_cassandra/_version.py').read())
 
 setup(
     name="thumbor_cassandra",
